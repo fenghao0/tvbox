@@ -1,6 +1,6 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-15 18:46 (UTC+8)　上游数据更新：2026-11-14 23:13 UTC
+生成时间：2026-11-15 18:54 (UTC+8)　上游数据更新：2026-11-14 23:13 UTC
 
 源数量：去重后共 123 个，当前可用 74 个，不可用 49 个。
 
@@ -91,3 +91,21 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | www.xiangjiaozyw.com | CONNECTION_ERROR |
 | xxavs.com | UNKNOWN |
 | xzybb2.com | CONNECTION_ERROR |
+
+## 每日接口状态变化
+
+检查时间：2026-11-15 18:54:45 (UTC+8)
+
+与上一次成功检查相比：新增可用 **0** 个；本次失效 **0** 个。
+
+### 新增可用接口
+
+| 源 | API |
+|---|---|
+| 无 | - |
+
+### 本次失效接口
+
+| 源 | API |
+|---|---|
+| 无 | - |
