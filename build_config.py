@@ -331,16 +331,18 @@ def load_previous_status():
 def append_status_report(updated, previous, results):
     """写入本轮状态基线，并报告新增可用和本次失效接口。"""
     now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8)))
+    checked = {}
     current = {}
     for site, status in results:
+        api = site.get("api", "")
+        key = normalize_api(api)
+        if not key:
+            continue
+        checked[key] = status
         if status in VALID_STATUSES:
-            api = site.get("api", "")
-            key = normalize_api(api)
-            if key:
-                current[key] = {"name": site.get("name") or api, "api": api}
-
-    newly_available = [current[k] for k in current.keys() - previous.keys()]
-    unavailable = [previous[k] for k in previous.keys() - current.keys()]
+            current[key] = {"name": site.get("name") or api, "api": api}
+    newly_available = [current[k] for k in current if k not in previous]
+    unavailable = [previous[k] for k in previous if k in checked and checked[k] not in VALID_STATUSES]
     save_json(os.path.join(OUT_DIR, "interface-status.json"), {
         "checked_at": now.isoformat(),
         "upstream_updated": updated or "",
@@ -348,7 +350,6 @@ def append_status_report(updated, previous, results):
         "available_count": len(current),
         "sites": sorted(current.values(), key=lambda x: x["api"]),
     })
-
     lines = [
         "",
         "## 每日接口状态变化",
