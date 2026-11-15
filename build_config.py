@@ -308,9 +308,74 @@ def save_links(updated, sites, results):
         f.write(chr(10).join(lines))
 
 
+def load_previous_status():
+    """读取上一轮可用接口；首次运行回退到现有验活配置。"""
+    status_path = os.path.join(OUT_DIR, "interface-status.json")
+    source_path = status_path if os.path.exists(status_path) else OK_OUT
+    try:
+        with open(source_path, "r", encoding="utf-8-sig") as f:
+            data = json.load(f)
+        entries = data.get("sites", []) if isinstance(data, dict) else []
+        previous = {}
+        for item in entries:
+            if isinstance(item, dict):
+                api = str(item.get("api") or "").strip()
+                key = normalize_api(api)
+                if key:
+                    previous[key] = {"name": item.get("name") or api, "api": api}
+        return previous
+    except (OSError, ValueError, TypeError):
+        return {}
+
+
+def append_status_report(updated, previous, results):
+    """写入本轮状态基线，并报告新增可用和本次失效接口。"""
+    now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8)))
+    current = {}
+    for site, status in results:
+        if status in VALID_STATUSES:
+            api = site.get("api", "")
+            key = normalize_api(api)
+            if key:
+                current[key] = {"name": site.get("name") or api, "api": api}
+
+    newly_available = [current[k] for k in current.keys() - previous.keys()]
+    unavailable = [previous[k] for k in previous.keys() - current.keys()]
+    save_json(os.path.join(OUT_DIR, "interface-status.json"), {
+        "checked_at": now.isoformat(),
+        "upstream_updated": updated or "",
+        "total_checked": len(results),
+        "available_count": len(current),
+        "sites": sorted(current.values(), key=lambda x: x["api"]),
+    })
+
+    lines = [
+        "",
+        "## 每日接口状态变化",
+        "",
+        "检查时间：%s (UTC+8)" % now.strftime("%Y-%m-%d %H:%M:%S"),
+        "",
+        "与上一次成功检查相比：新增可用 **%d** 个；本次失效 **%d** 个。" % (len(newly_available), len(unavailable)),
+        "",
+    ]
+    for heading, entries in (("新增可用接口", newly_available), ("本次失效接口", unavailable)):
+        lines.extend(["### " + heading, "", "| 源 | API |", "|---|---|"])
+        if entries:
+            for item in sorted(entries, key=lambda x: x["name"]):
+                name = str(item["name"]).replace("|", "\\|").replace(chr(10), " ")
+                api = str(item["api"]).replace("|", "%7C")
+                lines.append("| %s | `%s` |" % (name, api))
+        else:
+            lines.append("| 无 | - |")
+        lines.append("")
+    with open(LINKS_OUT, "a", encoding="utf-8", newline=chr(10)) as f:
+        f.write(chr(10).join(lines))
+
+
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     updated, total, sites, skipped_empty, skipped_duplicate = load_sites()
+    previous_status = load_previous_status()
 
     print("=" * 60)
     print("CineNest TVBox 配置构建")
@@ -340,6 +405,7 @@ def main():
 
     save_json(OK_OUT, build(ok_sites, "CineNest 验活版"))
     save_links(updated, sites, results)
+    append_status_report(updated, previous_status, results)
 
     print()
     print("=" * 60)
