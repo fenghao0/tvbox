@@ -1,6 +1,6 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-16 12:35 (UTC+8)　上游数据更新：2026-11-15 23:27 UTC
+生成时间：2026-11-17 14:22 (UTC+8)　上游数据更新：2026-11-17 02:32 UTC
 
 源数量：去重后共 123 个，当前可用 74 个，不可用 49 个。
 
@@ -46,7 +46,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 卧龙资源·wolongzyw | INVALID_XML |
 | 旺旺短剧 | HTML |
 | 卧龙点播 | INVALID_XML |
-| 魔爪资源 | CONNECTION_ERROR |
+| 魔爪资源 | INVALID_XML |
 | 旺旺资源 | HTML |
 | 豆瓣资源·caiji | CONNECTION_ERROR |
 | 豆瓣资源·dbzy | CONNECTION_ERROR |
@@ -94,7 +94,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 
 ## 每日接口状态变化
 
-检查时间：2026-11-16 12:35:57 (UTC+8)
+检查时间：2026-11-17 14:22:25 (UTC+8)
 
 与上一次成功检查相比：新增可用 **0** 个；本次失效 **0** 个。
 
