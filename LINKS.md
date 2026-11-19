@@ -1,8 +1,8 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-18 13:47 (UTC+8)　上游数据更新：2026-11-18 01:44 UTC
+生成时间：2026-11-19 13:46 (UTC+8)　上游数据更新：2026-11-19 01:19 UTC
 
-源数量：去重后共 123 个，当前可用 74 个，不可用 49 个。
+源数量：去重后共 123 个，当前可用 73 个，不可用 50 个。
 
 ## 推荐：验活版
 
@@ -58,7 +58,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 小猫咪资源 | CONNECTION_ERROR |
 | 快播资源网站 | CONNECTION_ERROR |
 | 蜂巢片库 | CONNECTION_ERROR |
-| 金马资源网 | TIMEOUT |
+| 金马资源网 | CONNECTION_ERROR |
 | 黑木耳 | HTML |
 | 黑木耳点播 | HTML |
 | a.uezy.pw | HTML |
@@ -86,6 +86,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | AV-色嗨国 | CONNECTION_ERROR |
 | 91av.cyou | UNKNOWN |
 | 91jpzyw.com | HTML |
+| lovedan.net | TIMEOUT |
 | siwazyw.tv | CONNECTION_ERROR |
 | www.avre06.com | CONNECTION_ERROR |
 | www.xiangjiaozyw.com | CONNECTION_ERROR |
@@ -94,9 +95,9 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 
 ## 每日接口状态变化
 
-检查时间：2026-11-18 13:47:38 (UTC+8)
+检查时间：2026-11-19 13:46:32 (UTC+8)
 
-与上一次成功检查相比：新增可用 **0** 个；本次失效 **0** 个。
+与上一次成功检查相比：新增可用 **0** 个；本次失效 **1** 个。
 
 ### 新增可用接口
 
@@ -108,4 +109,4 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 
 | 源 | API |
 |---|---|
-| 无 | - |
+| lovedan.net | `https://lovedan.net/api.php/provide/vod` |
