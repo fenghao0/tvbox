@@ -2,7 +2,9 @@ name: 同步上游并重建配置
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # 每天 08:00 北京时间
+    # 北京 20:00（UTC 12:00）。上游 zknjjjx/tvbox 固定在北京 14:50~18:40 更新，
+    # 放在 20:00 可确保拿到当天最新内容。
+    - cron: '0 12 * * *'
   workflow_dispatch:
   push:
     branches: [main]

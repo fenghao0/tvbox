@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 拉取上游 zknjjjx/tvbox 的最新内容，镜像到本仓库。
-由 .github/workflows/sync.yml 每天 08:00（北京时间）调用。
+由 .github/workflows/sync.yml 每天 20:00（北京时间）调用。
 """
 import io
 import os
