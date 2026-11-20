@@ -20,7 +20,9 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/config/tvbox-all.json
 
 ## 更新机制
 
-`.github/workflows/sync.yml` 每天 **北京时间 20:00**（UTC 12:00）运行：
+`.github/workflows/sync.yml` 每天 **北京时间 05:30**（UTC 21:30）运行。
+
+时间以上游脚本 `.github/workflows/collect.yml` 的 cron 为基准顺延 2 小时：上游为 `30 19 * * *`（UTC 19:30 = 北京 03:30），本仓库取 `30 21 * * *`（UTC 21:30 = 北京 05:30）。
 
 1. `sync.py` 下载上游 `zknjjjx/tvbox` main 分支压缩包，镜像 `cmstv.json`、`tvbox.json`、`niuniu.json`、`multi.json`、`upstream/`、`assets/` 到本仓库（上游 README 另存为 `README-upstream.md`，不覆盖本文件；不镜像上游 `.github`，避免运行上游自己的采集工作流）
 2. `build_config.py` 把 `cmstv.json`（上游自定义 `cmstv/1` 结构，源只有 `name`/`api`）转成标准 TVBox 结构：补 `type:1`、唯一 `key`、`searchable/quickSearch/filterable`，补齐 `parses`/`lives` 空数组

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 拉取上游 zknjjjx/tvbox 的最新内容，镜像到本仓库。
-由 .github/workflows/sync.yml 每天 20:00（北京时间）调用。
+由 .github/workflows/sync.yml 每天 05:30（北京时间）调用，
+以上游 collect.yml 的 cron（UTC 19:30）为基准顺延 2 小时。
 """
 import io
 import os
