@@ -356,17 +356,6 @@
       "group": "采集源"
     },
     {
-      "key": "c071",
-      "name": "最大点播",
-      "type": 1,
-      "api": "https://zuidazy.me/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "",
-      "group": "采集源"
-    },
-    {
       "key": "c072",
       "name": "丫丫资源",
       "type": 1,
@@ -393,17 +382,6 @@
       "name": "无尽资源·api",
       "type": 1,
       "api": "https://api.wujinapi.me/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "",
-      "group": "采集源"
-    },
-    {
-      "key": "c075",
-      "name": "最大资源",
-      "type": 1,
-      "api": "https://api.zuidapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -745,17 +723,6 @@
       "name": "bhziyuan.com",
       "type": 1,
       "api": "https://bhziyuan.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "",
-      "group": "采集源"
-    },
-    {
-      "key": "c113",
-      "name": "caiji.kuaichezy.org",
-      "type": 1,
-      "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,

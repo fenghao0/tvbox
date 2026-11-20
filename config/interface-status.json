@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-20T12:51:58.856518+08:00",
+  "checked_at": "2026-11-20T12:53:42.130251+08:00",
   "upstream_updated": "2026-11-20 01:22 UTC",
   "total_checked": 123,
-  "available_count": 74,
+  "available_count": 71,
   "sites": [
     {
       "name": "api.1080zyku.com",
@@ -101,10 +101,6 @@
       "api": "https://api.wujinapi.net/api.php/provide/vod"
     },
     {
-      "name": "最大资源",
-      "api": "https://api.zuidapi.com/api.php/provide/vod"
-    },
-    {
       "name": "apidanaizi.com",
       "api": "https://apidanaizi.com/api.php/provide/vod"
     },
@@ -131,10 +127,6 @@
     {
       "name": "bhziyuan.com",
       "api": "https://bhziyuan.com/api.php/provide/vod"
-    },
-    {
-      "name": "caiji.kuaichezy.org",
-      "api": "https://caiji.kuaichezy.org/api.php/provide/vod"
     },
     {
       "name": "茅台资源",
@@ -295,10 +287,6 @@
     {
       "name": "索尼-闪电资源",
       "api": "https://xsd.sdzyapi.com/api.php/provide/vod"
-    },
-    {
-      "name": "最大点播",
-      "api": "https://zuidazy.me/api.php/provide/vod"
     }
   ]
 }
