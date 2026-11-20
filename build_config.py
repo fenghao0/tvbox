@@ -5,9 +5,11 @@ CineNest TVBox 配置构建脚本。
 验活版仅保留检测到有效 CMS JSON/XML 结构的源。
 """
 import concurrent.futures as cf
+import glob
 import http.client
 import json
 import os
+import random
 import socket
 import sys
 import time
@@ -18,16 +20,17 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 
 SRC = "cmstv.json"
+UPSTREAM_DIR = "upstream"
 OUT_DIR = "config"
 ALL_OUT = os.path.join(OUT_DIR, "tvbox-all.json")
 OK_OUT = os.path.join(OUT_DIR, "tvbox-ok.json")
 LINKS_OUT = "LINKS.md"
 SLUG = os.environ.get("GITHUB_REPOSITORY", "fenghao0/tvbox")
 BRANCH = "main"
-WORKERS = 24
+WORKERS = int(os.environ.get("PROBE_WORKERS", "48"))
 TIMEOUT = 12
 RETRIES = 2
-RETRY_DELAY = 1
+RETRY_DELAY = 0.5
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
 
 UA = {
@@ -71,6 +74,55 @@ def make_probe_url(api):
     ))
 
 
+def load_upstream_repos():
+    """从已镜像的 upstream/*.json 提取可独立使用的采集源。
+
+    这些文件是上游 repos.py 抓到的单仓配置快照，结构为
+    {"url": ..., "final": ..., "conf": {"sites": [...], "spider": ...}}。
+
+    只有 type==1 且 api 是 http 地址的源能独立工作：
+    type==3 是各仓专有解析器（api 形如 csp_XXXXGuard），
+    必须配该仓自己的 spider jar，搬过来只会播放失败，因此丢弃。
+    """
+    found, skipped = [], 0
+    paths = sorted(glob.glob(os.path.join(UPSTREAM_DIR, "*.json")))
+    for path in paths:
+        repo = os.path.splitext(os.path.basename(path))[0]
+        try:
+            with open(path, "r", encoding="utf-8-sig") as f:
+                data = json.load(f)
+        except (OSError, ValueError) as error:
+            print("警告：读取 %s 失败（%s）" % (path, error))
+            continue
+
+        conf = None
+        if isinstance(data, dict):
+            conf = data.get("conf")
+            if not isinstance(conf, dict):
+                conf = data          # 兼容直接给 sites 的明文格式
+        if not isinstance(conf, dict):
+            continue
+
+        for item in conf.get("sites") or []:
+            if not isinstance(item, dict):
+                continue
+            api = str(item.get("api") or "").strip()
+            if item.get("type") != 1 or not api.lower().startswith(("http://", "https://")):
+                skipped += 1
+                continue
+            found.append({
+                "name": "%s·%s" % (repo, str(item.get("name") or repo).strip()),
+                "api": api,
+                "hot": 0,          # 单仓源人气未知，排在已知人气源之后
+                "first": "",
+                "group": "单仓",
+            })
+
+    print("单仓快照：%d 个文件，提取直连源 %d 个（跳过 type3/非 http %d 个）"
+          % (len(paths), len(found), skipped))
+    return found
+
+
 def load_sites():
     with open(SRC, "r", encoding="utf-8-sig") as f:
         data = json.load(f)
@@ -81,7 +133,8 @@ def load_sites():
     if not isinstance(raw, list):
         raise ValueError("上游 cmstv.json 的 sites 必须是数组")
 
-    sites, seen = [], set()
+    # 内部条目带上 hot / first 用于排序，写入配置前会剔除。
+    collected, seen = [], set()
     skipped_empty = skipped_duplicate = 0
 
     for item in raw:
@@ -99,23 +152,51 @@ def load_sites():
             continue
         seen.add(normalized)
 
-        name = str(item.get("name") or api).strip() or api
-        sites.append({
-            "key": "c%03d" % (len(sites) + 1),
-            "name": name,
-            "type": 1,
+        collected.append({
+            "name": str(item.get("name") or api).strip() or api,
             "api": api,
+            "hot": int(item.get("hot") or 0),
+            "first": str(item.get("first") or ""),
+            "group": "采集源",
+        })
+
+    # 方案 B：并入单仓快照里的直连源，同样参与去重。
+    added = 0
+    for item in load_upstream_repos():
+        normalized = normalize_api(item["api"])
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        collected.append(item)
+        added += 1
+
+    # 人气高的在前（热门前置能让客户端全局搜索更快命中），
+    # 同人气时存在时间久的在前。
+    collected.sort(key=lambda s: (-s["hot"], s.get("first") or "9999"))
+
+    sites = []
+    for index, item in enumerate(collected, 1):
+        sites.append({
+            "key": "c%03d" % index,
+            "name": item["name"],
+            "type": 1,
+            "api": item["api"],
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
             "ext": "",
-            "group": "采集源",
+            "group": item["group"],
         })
 
     return (
         str(data.get("updated") or ""), len(raw), sites,
-        skipped_empty, skipped_duplicate
+        skipped_empty, skipped_duplicate, added
     )
+
+
+def backoff(attempt):
+    """指数退避：0.5s、1s、2s。带上抖动，避免多个线程同时重试。"""
+    time.sleep(RETRY_DELAY * (2 ** attempt) + random.uniform(0, 0.3))
 
 
 def check_response(body):
@@ -178,37 +259,37 @@ def probe(site):
                 result in ("HTTP_408", "HTTP_425", "HTTP_429")
                 or result.startswith("HTTP_5")
             ):
-                time.sleep(RETRY_DELAY * (attempt + 1))
+                backoff(attempt)
                 continue
             return site, result
 
         except urllib.error.HTTPError as error:
             code = error.code
             if attempt < RETRIES and (code in (408, 425, 429) or code >= 500):
-                time.sleep(RETRY_DELAY * (attempt + 1))
+                backoff(attempt)
                 continue
             return site, "HTTP_%s" % code
         except (socket.timeout, TimeoutError):
             if attempt < RETRIES:
-                time.sleep(RETRY_DELAY * (attempt + 1))
+                backoff(attempt)
                 continue
             return site, "TIMEOUT"
         except urllib.error.URLError as error:
             reason = str(getattr(error, "reason", error)).lower()
             if attempt < RETRIES:
-                time.sleep(RETRY_DELAY * (attempt + 1))
+                backoff(attempt)
                 continue
             if "timed out" in reason or "timeout" in reason:
                 return site, "TIMEOUT"
             return site, "CONNECTION_ERROR"
         except http.client.IncompleteRead:
             if attempt < RETRIES:
-                time.sleep(RETRY_DELAY * (attempt + 1))
+                backoff(attempt)
                 continue
             return site, "INCOMPLETE_RESPONSE"
         except Exception as error:
             if attempt < RETRIES:
-                time.sleep(RETRY_DELAY * (attempt + 1))
+                backoff(attempt)
                 continue
             print("[验活异常] %s: %s" % (site["name"], str(error)[:160]))
             return site, "ERROR"
@@ -375,7 +456,8 @@ def append_status_report(updated, previous, results):
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-    updated, total, sites, skipped_empty, skipped_duplicate = load_sites()
+    (updated, total, sites,
+     skipped_empty, skipped_duplicate, added) = load_sites()
     previous_status = load_previous_status()
 
     print("=" * 60)
@@ -383,10 +465,11 @@ def main():
     print("=" * 60)
     print("上游更新时间：%s" % (updated or "未知"))
     print("上游原始数量：%d" % total)
-    print("有效 API 去重后：%d" % len(sites))
+    print("有效 API 去重后：%d（其中单仓新增 %d）" % (len(sites), added))
     print("跳过空 API：%d" % skipped_empty)
     print("跳过重复 API：%d" % skipped_duplicate)
     print("adult 字段过滤：关闭")
+    print("验活并发：%d  超时：%ds  重试：%d" % (WORKERS, TIMEOUT, RETRIES))
     print("=" * 60)
 
     # 全量版包含所有有效 API 源，不受验活结果影响。
