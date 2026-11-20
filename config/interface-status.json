@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-19T13:46:32.250989+08:00",
-  "upstream_updated": "2026-11-19 01:19 UTC",
+  "checked_at": "2026-11-20T12:51:58.856518+08:00",
+  "upstream_updated": "2026-11-20 01:22 UTC",
   "total_checked": 123,
-  "available_count": 73,
+  "available_count": 74,
   "sites": [
     {
       "name": "api.1080zyku.com",
@@ -211,6 +211,10 @@
     {
       "name": "AV-乐播资源",
       "api": "https://lbapi9.com/api.php/provide/vod"
+    },
+    {
+      "name": "lovedan.net",
+      "api": "https://lovedan.net/api.php/provide/vod"
     },
     {
       "name": "樱花资源",

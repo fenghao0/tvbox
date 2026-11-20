@@ -774,6 +774,17 @@
       "group": "采集源"
     },
     {
+      "key": "c115",
+      "name": "lovedan.net",
+      "type": 1,
+      "api": "https://lovedan.net/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": "",
+      "group": "采集源"
+    },
+    {
       "key": "c117",
       "name": "thzy1.me",
       "type": 1,

@@ -1,8 +1,8 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-19 13:46 (UTC+8)　上游数据更新：2026-11-19 01:19 UTC
+生成时间：2026-11-20 12:51 (UTC+8)　上游数据更新：2026-11-20 01:22 UTC
 
-源数量：去重后共 123 个，当前可用 73 个，不可用 50 个。
+源数量：去重后共 123 个，当前可用 74 个，不可用 49 个。
 
 ## 推荐：验活版
 
@@ -86,7 +86,6 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | AV-色嗨国 | CONNECTION_ERROR |
 | 91av.cyou | UNKNOWN |
 | 91jpzyw.com | HTML |
-| lovedan.net | TIMEOUT |
 | siwazyw.tv | CONNECTION_ERROR |
 | www.avre06.com | CONNECTION_ERROR |
 | www.xiangjiaozyw.com | CONNECTION_ERROR |
@@ -95,18 +94,18 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 
 ## 每日接口状态变化
 
-检查时间：2026-11-19 13:46:32 (UTC+8)
+检查时间：2026-11-20 12:51:58 (UTC+8)
 
-与上一次成功检查相比：新增可用 **0** 个；本次失效 **1** 个。
+与上一次成功检查相比：新增可用 **1** 个；本次失效 **0** 个。
 
 ### 新增可用接口
 
 | 源 | API |
 |---|---|
-| 无 | - |
+| lovedan.net | `https://lovedan.net/api.php/provide/vod` |
 
 ### 本次失效接口
 
 | 源 | API |
 |---|---|
-| lovedan.net | `https://lovedan.net/api.php/provide/vod` |
+| 无 | - |
