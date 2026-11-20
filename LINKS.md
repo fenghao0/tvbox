@@ -1,6 +1,6 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-20 13:09 (UTC+8)　上游数据更新：2026-11-20 01:22 UTC
+生成时间：2026-11-20 13:36 (UTC+8)　上游数据更新：2026-11-20 01:22 UTC
 
 源数量：去重后共 138 个，当前可用 84 个，不可用 54 个。
 
@@ -62,7 +62,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 小猫咪资源 | CONNECTION_ERROR |
 | 快播资源网站 | CONNECTION_ERROR |
 | 蜂巢片库 | CONNECTION_ERROR |
-| 金马资源网 | CONNECTION_ERROR |
+| 金马资源网 | TIMEOUT |
 | 黑木耳 | HTML |
 | 黑木耳点播 | HTML |
 | a.uezy.pw | HTML |
@@ -82,7 +82,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 海外看 | CONNECTION_ERROR |
 | 熊掌资源 | CONNECTION_ERROR |
 | 种子短剧 | HTML |
-| 飘花影院 | HTTP_404 |
+| 飘花影院 | CONNECTION_ERROR |
 | 飞速资源 | CONNECTION_ERROR |
 | 91av.cyou | UNKNOWN |
 | 91jpzyw.com | HTML |
@@ -95,31 +95,19 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 老刘备·🦁┃四九┃资源 | CONNECTION_ERROR |
 | 老刘备·🛰️飞速┃采集 | CONNECTION_ERROR |
 | 老刘备·⛱┃可可┃采集 | CONNECTION_ERROR |
-| 老刘备·🎶明星┃MV | HTTP_401 |
+| 老刘备·🎶明星┃MV | HTML |
 
 ## 每日接口状态变化
 
-检查时间：2026-11-20 13:09:52 (UTC+8)
+检查时间：2026-11-20 13:36:20 (UTC+8)
 
-与上一次成功检查相比：新增可用 **13** 个；本次失效 **0** 个。
+与上一次成功检查相比：新增可用 **0** 个；本次失效 **0** 个。
 
 ### 新增可用接口
 
 | 源 | API |
 |---|---|
-| caiji.kuaichezy.org | `https://caiji.kuaichezy.org/api.php/provide/vod` |
-| dxawi·IK | `https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/` |
-| 二月红·🍀┃非凡┃资源 | `http://ffzy5.tv/api.php/provide/vod` |
-| 最大点播 | `https://zuidazy.me/api.php/provide/vod` |
-| 最大资源 | `https://api.zuidapi.com/api.php/provide/vod` |
-| 老刘备·🌪️暴风影音 | `https://app.bfzyapi.com/api.php/provide/vod/` |
-| 老刘备·🎏百度┃采集 | `https://api.apibdzy.com/api.php/provide/vod/?ac=list` |
-| 老刘备·🐉┃索尼┃高清 | `https://suoniapi.com/api.php/provide/vod/?ac=list` |
-| 老刘备·🐯虎牙采集 | `https://www.huyaapi.com/api.php/provide/vod/from/hym3u8` |
-| 老刘备·🕹️淘片┃采集 | `https://taopianapi.com/cjapi/mc/vod/json.html` |
-| 老刘备·🥑┃量子┃资源 | `https://lzizy1.com/api.php/provide/vod/` |
-| 老刘备·🥗┃非凡┃资源 | `http://ffzy1.tv/api.php/provide/vod/` |
-| 菜妮丝·非凡┃影视 | `http://cj.ffzyapi.com/api.php/provide/vod` |
+| 无 | - |
 
 ### 本次失效接口
 
