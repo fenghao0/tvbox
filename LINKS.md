@@ -1,8 +1,8 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-20 12:53 (UTC+8)　上游数据更新：2026-11-20 01:22 UTC
+生成时间：2026-11-20 13:09 (UTC+8)　上游数据更新：2026-11-20 01:22 UTC
 
-源数量：去重后共 123 个，当前可用 71 个，不可用 52 个。
+源数量：去重后共 138 个，当前可用 84 个，不可用 54 个。
 
 ## 推荐：验活版
 
@@ -47,9 +47,13 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 旺旺短剧 | HTML |
 | 卧龙点播 | INVALID_XML |
 | 魔爪资源 | INVALID_XML |
+| AV-AIvin | HTTP_502 |
+| 细胞采集黄色 | CONNECTION_ERROR |
 | 旺旺资源 | HTML |
 | 豆瓣资源·caiji | CONNECTION_ERROR |
 | 豆瓣资源·dbzy | CONNECTION_ERROR |
+| AV-百万资源 | CONNECTION_ERROR |
+| AV-色嗨国 | CONNECTION_ERROR |
 | caiji.dbzy5.com | CONNECTION_ERROR |
 | zy.jinchancaiji.com | CONNECTION_ERROR |
 | 七七影视 | CONNECTION_ERROR |
@@ -80,37 +84,45 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 种子短剧 | HTML |
 | 飘花影院 | HTTP_404 |
 | 飞速资源 | CONNECTION_ERROR |
-| 最大点播 | TIMEOUT |
-| 最大资源 | TIMEOUT |
-| AV-AIvin | HTTP_502 |
-| 细胞采集黄色 | CONNECTION_ERROR |
-| AV-百万资源 | CONNECTION_ERROR |
-| AV-色嗨国 | CONNECTION_ERROR |
 | 91av.cyou | UNKNOWN |
 | 91jpzyw.com | HTML |
-| caiji.kuaichezy.org | TIMEOUT |
 | siwazyw.tv | CONNECTION_ERROR |
 | www.avre06.com | CONNECTION_ERROR |
 | www.xiangjiaozyw.com | CONNECTION_ERROR |
 | xxavs.com | UNKNOWN |
 | xzybb2.com | CONNECTION_ERROR |
+| 老刘备·👒┃小胡┃资源┃ | ERROR |
+| 老刘备·🦁┃四九┃资源 | CONNECTION_ERROR |
+| 老刘备·🛰️飞速┃采集 | CONNECTION_ERROR |
+| 老刘备·⛱┃可可┃采集 | CONNECTION_ERROR |
+| 老刘备·🎶明星┃MV | HTTP_401 |
 
 ## 每日接口状态变化
 
-检查时间：2026-11-20 12:53:42 (UTC+8)
+检查时间：2026-11-20 13:09:52 (UTC+8)
 
-与上一次成功检查相比：新增可用 **0** 个；本次失效 **3** 个。
+与上一次成功检查相比：新增可用 **13** 个；本次失效 **0** 个。
 
 ### 新增可用接口
 
 | 源 | API |
 |---|---|
-| 无 | - |
+| caiji.kuaichezy.org | `https://caiji.kuaichezy.org/api.php/provide/vod` |
+| dxawi·IK | `https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/` |
+| 二月红·🍀┃非凡┃资源 | `http://ffzy5.tv/api.php/provide/vod` |
+| 最大点播 | `https://zuidazy.me/api.php/provide/vod` |
+| 最大资源 | `https://api.zuidapi.com/api.php/provide/vod` |
+| 老刘备·🌪️暴风影音 | `https://app.bfzyapi.com/api.php/provide/vod/` |
+| 老刘备·🎏百度┃采集 | `https://api.apibdzy.com/api.php/provide/vod/?ac=list` |
+| 老刘备·🐉┃索尼┃高清 | `https://suoniapi.com/api.php/provide/vod/?ac=list` |
+| 老刘备·🐯虎牙采集 | `https://www.huyaapi.com/api.php/provide/vod/from/hym3u8` |
+| 老刘备·🕹️淘片┃采集 | `https://taopianapi.com/cjapi/mc/vod/json.html` |
+| 老刘备·🥑┃量子┃资源 | `https://lzizy1.com/api.php/provide/vod/` |
+| 老刘备·🥗┃非凡┃资源 | `http://ffzy1.tv/api.php/provide/vod/` |
+| 菜妮丝·非凡┃影视 | `http://cj.ffzyapi.com/api.php/provide/vod` |
 
 ### 本次失效接口
 
 | 源 | API |
 |---|---|
-| caiji.kuaichezy.org | `https://caiji.kuaichezy.org/api.php/provide/vod` |
-| 最大点播 | `https://zuidazy.me/api.php/provide/vod` |
-| 最大资源 | `https://api.zuidapi.com/api.php/provide/vod` |
+| 无 | - |

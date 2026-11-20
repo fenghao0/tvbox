@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-20T12:53:42.130251+08:00",
+  "checked_at": "2026-11-20T13:09:52.872237+08:00",
   "upstream_updated": "2026-11-20 01:22 UTC",
-  "total_checked": 123,
-  "available_count": 71,
+  "total_checked": 138,
+  "available_count": 84,
   "sites": [
     {
       "name": "api.1080zyku.com",
@@ -11,6 +11,18 @@
     {
       "name": "电影天堂",
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod"
+    },
+    {
+      "name": "菜妮丝·非凡┃影视",
+      "api": "http://cj.ffzyapi.com/api.php/provide/vod"
+    },
+    {
+      "name": "老刘备·🥗┃非凡┃资源",
+      "api": "http://ffzy1.tv/api.php/provide/vod/"
+    },
+    {
+      "name": "二月红·🍀┃非凡┃资源",
+      "api": "http://ffzy5.tv/api.php/provide/vod"
     },
     {
       "name": "AV-番号资源",
@@ -43,6 +55,10 @@
     {
       "name": "百度资源",
       "api": "https://api.apibdzy.com/api.php/provide/vod"
+    },
+    {
+      "name": "老刘备·🎏百度┃采集",
+      "api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list"
     },
     {
       "name": "api.ddapi.cc",
@@ -101,6 +117,10 @@
       "api": "https://api.wujinapi.net/api.php/provide/vod"
     },
     {
+      "name": "最大资源",
+      "api": "https://api.zuidapi.com/api.php/provide/vod"
+    },
+    {
       "name": "apidanaizi.com",
       "api": "https://apidanaizi.com/api.php/provide/vod"
     },
@@ -117,6 +137,10 @@
       "api": "https://apiyutu.com/api.php/provide/vod"
     },
     {
+      "name": "老刘备·🌪️暴风影音",
+      "api": "https://app.bfzyapi.com/api.php/provide/vod/"
+    },
+    {
       "name": "beiyong.slapibf.com",
       "api": "https://beiyong.slapibf.com/api.php/provide/vod"
     },
@@ -127,6 +151,10 @@
     {
       "name": "bhziyuan.com",
       "api": "https://bhziyuan.com/api.php/provide/vod"
+    },
+    {
+      "name": "caiji.kuaichezy.org",
+      "api": "https://caiji.kuaichezy.org/api.php/provide/vod"
     },
     {
       "name": "茅台资源",
@@ -181,6 +209,10 @@
       "api": "https://ikunzyapi.com/api.php/provide/vod"
     },
     {
+      "name": "dxawi·IK",
+      "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/"
+    },
+    {
       "name": "爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod"
     },
@@ -209,6 +241,10 @@
       "api": "https://lovedan.net/api.php/provide/vod"
     },
     {
+      "name": "老刘备·🥑┃量子┃资源",
+      "api": "https://lzizy1.com/api.php/provide/vod/"
+    },
+    {
       "name": "樱花资源",
       "api": "https://m3u8.apiyhzy.com/api.php/provide/vod"
     },
@@ -235,6 +271,14 @@
     {
       "name": "索尼资源",
       "api": "https://suoniapi.com/api.php/provide/vod"
+    },
+    {
+      "name": "老刘备·🐉┃索尼┃高清",
+      "api": "https://suoniapi.com/api.php/provide/vod/?ac=list"
+    },
+    {
+      "name": "老刘备·🕹️淘片┃采集",
+      "api": "https://taopianapi.com/cjapi/mc/vod/json.html"
     },
     {
       "name": "thzy1.me",
@@ -269,6 +313,10 @@
       "api": "https://www.huyaapi.com/api.php/provide/vod"
     },
     {
+      "name": "老刘备·🐯虎牙采集",
+      "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8"
+    },
+    {
       "name": "AV-精品资源",
       "api": "https://www.jingpinx.com/api.php/provide/vod"
     },
@@ -287,6 +335,10 @@
     {
       "name": "索尼-闪电资源",
       "api": "https://xsd.sdzyapi.com/api.php/provide/vod"
+    },
+    {
+      "name": "最大点播",
+      "api": "https://zuidazy.me/api.php/provide/vod"
     }
   ]
 }
