@@ -1,8 +1,8 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-20 13:36 (UTC+8)　上游数据更新：2026-11-20 01:22 UTC
+生成时间：2026-11-21 10:36 (UTC+8)　上游数据更新：2026-11-21 00:53 UTC
 
-源数量：去重后共 138 个，当前可用 84 个，不可用 54 个。
+源数量：去重后共 138 个，当前可用 83 个，不可用 55 个。
 
 ## 推荐：验活版
 
@@ -62,7 +62,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 小猫咪资源 | CONNECTION_ERROR |
 | 快播资源网站 | CONNECTION_ERROR |
 | 蜂巢片库 | CONNECTION_ERROR |
-| 金马资源网 | TIMEOUT |
+| 金马资源网 | CONNECTION_ERROR |
 | 黑木耳 | HTML |
 | 黑木耳点播 | HTML |
 | a.uezy.pw | HTML |
@@ -82,12 +82,13 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 海外看 | CONNECTION_ERROR |
 | 熊掌资源 | CONNECTION_ERROR |
 | 种子短剧 | HTML |
-| 飘花影院 | CONNECTION_ERROR |
+| 飘花影院 | HTTP_404 |
 | 飞速资源 | CONNECTION_ERROR |
 | 91av.cyou | UNKNOWN |
 | 91jpzyw.com | HTML |
 | siwazyw.tv | CONNECTION_ERROR |
 | www.avre06.com | CONNECTION_ERROR |
+| www.heiliaozyapi.com | TIMEOUT |
 | www.xiangjiaozyw.com | CONNECTION_ERROR |
 | xxavs.com | UNKNOWN |
 | xzybb2.com | CONNECTION_ERROR |
@@ -95,13 +96,13 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 老刘备·🦁┃四九┃资源 | CONNECTION_ERROR |
 | 老刘备·🛰️飞速┃采集 | CONNECTION_ERROR |
 | 老刘备·⛱┃可可┃采集 | CONNECTION_ERROR |
-| 老刘备·🎶明星┃MV | HTML |
+| 老刘备·🎶明星┃MV | HTTP_401 |
 
 ## 每日接口状态变化
 
-检查时间：2026-11-20 13:36:20 (UTC+8)
+检查时间：2026-11-21 10:36:39 (UTC+8)
 
-与上一次成功检查相比：新增可用 **0** 个；本次失效 **0** 个。
+与上一次成功检查相比：新增可用 **0** 个；本次失效 **1** 个。
 
 ### 新增可用接口
 
@@ -113,4 +114,4 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 
 | 源 | API |
 |---|---|
-| 无 | - |
+| www.heiliaozyapi.com | `https://www.heiliaozyapi.com/api.php/provide/vod` |

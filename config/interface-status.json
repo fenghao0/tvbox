@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-20T13:36:20.201270+08:00",
-  "upstream_updated": "2026-11-20 01:22 UTC",
+  "checked_at": "2026-11-21T10:36:39.482366+08:00",
+  "upstream_updated": "2026-11-21 00:53 UTC",
   "total_checked": 138,
-  "available_count": 84,
+  "available_count": 83,
   "sites": [
     {
       "name": "api.1080zyku.com",
@@ -295,10 +295,6 @@
     {
       "name": "vnzyz.com",
       "api": "https://vnzyz.com/api.php/provide/vod"
-    },
-    {
-      "name": "www.heiliaozyapi.com",
-      "api": "https://www.heiliaozyapi.com/api.php/provide/vod"
     },
     {
       "name": "红牛资源·hongniuzy2",
