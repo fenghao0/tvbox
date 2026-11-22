@@ -1,8 +1,8 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-21 10:36 (UTC+8)　上游数据更新：2026-11-21 00:53 UTC
+生成时间：2026-11-22 09:27 (UTC+8)　上游数据更新：2026-11-21 23:52 UTC
 
-源数量：去重后共 138 个，当前可用 83 个，不可用 55 个。
+源数量：去重后共 138 个，当前可用 84 个，不可用 54 个。
 
 ## 推荐：验活版
 
@@ -88,7 +88,6 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 91jpzyw.com | HTML |
 | siwazyw.tv | CONNECTION_ERROR |
 | www.avre06.com | CONNECTION_ERROR |
-| www.heiliaozyapi.com | TIMEOUT |
 | www.xiangjiaozyw.com | CONNECTION_ERROR |
 | xxavs.com | UNKNOWN |
 | xzybb2.com | CONNECTION_ERROR |
@@ -100,18 +99,18 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 
 ## 每日接口状态变化
 
-检查时间：2026-11-21 10:36:39 (UTC+8)
+检查时间：2026-11-22 09:27:49 (UTC+8)
 
-与上一次成功检查相比：新增可用 **0** 个；本次失效 **1** 个。
+与上一次成功检查相比：新增可用 **1** 个；本次失效 **0** 个。
 
 ### 新增可用接口
 
 | 源 | API |
 |---|---|
-| 无 | - |
+| www.heiliaozyapi.com | `https://www.heiliaozyapi.com/api.php/provide/vod` |
 
 ### 本次失效接口
 
 | 源 | API |
 |---|---|
-| www.heiliaozyapi.com | `https://www.heiliaozyapi.com/api.php/provide/vod` |
+| 无 | - |
