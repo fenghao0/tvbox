@@ -1,6 +1,6 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-22 09:27 (UTC+8)　上游数据更新：2026-11-21 23:52 UTC
+生成时间：2026-11-23 09:52 (UTC+8)　上游数据更新：2026-11-23 00:23 UTC
 
 源数量：去重后共 138 个，当前可用 84 个，不可用 54 个。
 
@@ -76,7 +76,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 三九影視 | HTTP_523 |
 | 四九资源 | CONNECTION_ERROR |
 | 奇虎资源 | CONNECTION_ERROR |
-| 快云资源 | CONNECTION_ERROR |
+| 快云资源 | HTML |
 | 快车资源 | CONNECTION_ERROR |
 | 每天资源 | HTTP_404 |
 | 海外看 | CONNECTION_ERROR |
@@ -95,19 +95,19 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 老刘备·🦁┃四九┃资源 | CONNECTION_ERROR |
 | 老刘备·🛰️飞速┃采集 | CONNECTION_ERROR |
 | 老刘备·⛱┃可可┃采集 | CONNECTION_ERROR |
-| 老刘备·🎶明星┃MV | HTTP_401 |
+| 老刘备·🎶明星┃MV | HTML |
 
 ## 每日接口状态变化
 
-检查时间：2026-11-22 09:27:49 (UTC+8)
+检查时间：2026-11-23 09:52:34 (UTC+8)
 
-与上一次成功检查相比：新增可用 **1** 个；本次失效 **0** 个。
+与上一次成功检查相比：新增可用 **0** 个；本次失效 **0** 个。
 
 ### 新增可用接口
 
 | 源 | API |
 |---|---|
-| www.heiliaozyapi.com | `https://www.heiliaozyapi.com/api.php/provide/vod` |
+| 无 | - |
 
 ### 本次失效接口
 
