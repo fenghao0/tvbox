@@ -1,6 +1,6 @@
 # TVBox 配置地址（自动生成）
 
-生成时间：2026-11-26 11:40 (UTC+8)　上游数据更新：2026-11-26 02:20 UTC
+生成时间：2026-11-27 11:42 (UTC+8)　上游数据更新：2026-11-27 02:20 UTC
 
 源数量：去重后共 138 个，当前可用 84 个，不可用 54 个。
 
@@ -76,7 +76,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 | 三九影視 | HTTP_523 |
 | 四九资源 | CONNECTION_ERROR |
 | 奇虎资源 | CONNECTION_ERROR |
-| 快云资源 | HTML |
+| 快云资源 | CONNECTION_ERROR |
 | 快车资源 | CONNECTION_ERROR |
 | 每天资源 | HTTP_404 |
 | 海外看 | CONNECTION_ERROR |
@@ -99,7 +99,7 @@ https://cdn.jsdelivr.net/gh/fenghao0/tvbox@main/multi.json
 
 ## 每日接口状态变化
 
-检查时间：2026-11-26 11:40:33 (UTC+8)
+检查时间：2026-11-27 11:42:35 (UTC+8)
 
 与上一次成功检查相比：新增可用 **0** 个；本次失效 **0** 个。
 
