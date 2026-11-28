@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-27T11:42:35.278097+08:00",
-  "upstream_updated": "2026-11-27 02:20 UTC",
+  "checked_at": "2026-11-28T11:24:07.735317+08:00",
+  "upstream_updated": "2026-11-28 02:04 UTC",
   "total_checked": 138,
-  "available_count": 84,
+  "available_count": 83,
   "sites": [
     {
       "name": "api.1080zyku.com",
@@ -235,10 +235,6 @@
     {
       "name": "AV-乐播资源",
       "api": "https://lbapi9.com/api.php/provide/vod"
-    },
-    {
-      "name": "lovedan.net",
-      "api": "https://lovedan.net/api.php/provide/vod"
     },
     {
       "name": "老刘备·🥑┃量子┃资源",
